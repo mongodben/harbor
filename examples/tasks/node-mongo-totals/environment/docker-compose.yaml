@@ -1,0 +1,26 @@
+# The `main` service (the agent's Node container) is configured automatically by
+# Harbor: build context, image, command, volumes, and resource limits all come
+# from Harbor's base compose templates merged on top of this file. Define only
+# the sidecar and the dependency edge here.
+services:
+  main:
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  mongo:
+    build:
+      context: ./mongo
+    environment:
+      MONGO_INITDB_DATABASE: app
+    expose:
+      - "27017"
+    healthcheck:
+      # depends_on: service_healthy gates the agent on this check, which only
+      # passes after the entrypoint finishes running the seed scripts and opens
+      # the network port — so the agent never observes an unseeded database.
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+      start_period: 3s
