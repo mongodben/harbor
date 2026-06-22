@@ -1,0 +1,27 @@
+# Job config for the node-mongo-totals example task, run with Codex against a
+# standard OpenAI-compatible endpoint (Bearer auth + base URL).
+#
+# Secrets come from your shell via ${VAR} templates and are never written here.
+# Export them, then run:
+#
+#   export OPENAI_API_KEY=sk-...
+#   export OPENAI_BASE_URL=https://your-endpoint.example.com/v1
+#   harbor run -c examples/configs/node-mongo.yaml
+
+orchestrator:
+  type: local
+  n_concurrent_trials: 1
+
+environment:
+  type: docker
+  delete: true
+
+agents:
+  - name: codex
+    model_name: gpt-5.4
+    env:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL}
+
+tasks:
+  - path: examples/tasks/node-mongo-totals

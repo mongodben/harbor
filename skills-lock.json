@@ -1,20 +1,35 @@
 {
   "version": 1,
   "skills": {
+    "create-adapter": {
+      "source": "harbor-framework/harbor",
+      "sourceType": "github",
+      "skillPath": "skills/create-adapter/SKILL.md",
+      "computedHash": "f595d98a5101120684b7e302333d9757c88ecd3173b55af69dce78e781c7b012"
+    },
     "create-task": {
       "source": "harbor-framework/harbor",
       "sourceType": "github",
-      "computedHash": "26c84928b726ced0ecef9fcf21c3c668648f618b62b5bf8683bb194a1a40a805"
+      "skillPath": "skills/create-task/SKILL.md",
+      "computedHash": "0264afb0150693fd665b9c249f85b2ec159c11b844b740de6d2ea856101dd30f"
     },
     "publish": {
       "source": "harbor-framework/harbor",
       "sourceType": "github",
-      "computedHash": "eb6d83a9848008a9b66e682ca7bed20843ced5b14febcafda8fdb08c6e910095"
+      "skillPath": "skills/publish/SKILL.md",
+      "computedHash": "62ef79f800e196a9579a8051f838086b486fa0fd4f203ca1baf396c728e15074"
     },
     "rewardkit": {
       "source": "harbor-framework/harbor",
       "sourceType": "github",
-      "computedHash": "a1ee21e1248f1896fbc2aab1797078fcf5a1e5f8d5e1df6eef78b7d8703fe092"
+      "skillPath": "skills/rewardkit/SKILL.md",
+      "computedHash": "e64770cf1843b230885e2d67716d90237ebe4aa6c88071c91655ec7c298a999c"
+    },
+    "upload-parity-experiments": {
+      "source": "harbor-framework/harbor",
+      "sourceType": "github",
+      "skillPath": "skills/upload-parity-experiments/SKILL.md",
+      "computedHash": "2c395778fd843f9cf50d4f885e229a997e259007bc6ba929e5ceb64682ca5459"
     }
   }
 }
